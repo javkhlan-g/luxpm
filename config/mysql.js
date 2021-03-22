@@ -1,17 +1,17 @@
 const Development = {
-  USER: "root",
-  PASSWORD: "Luxpm@21",
+  USER: process.env.DB_USER,
+  PASSWORD: process.env.DB_PASS,
 };
 
 const Production = {
-  USER: "root",
-  PASSWORD: "Luxpm@21",
+  USER: process.env.DB_USER,
+  PASSWORD: process.env.DB_PASS,
 };
 
 module.exports = {
   ...(process.env.ENV === "prod" ? Production : Development),
-  HOST: "localhost",
-  DB: "luxpm_db",
+  HOST: process.env.DB_HOST,
+  DB: process.env.DB_NAME,
   dialect: "mysql",
   pool: {
     max: 5,
